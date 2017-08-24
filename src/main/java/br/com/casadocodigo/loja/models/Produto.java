@@ -21,11 +21,17 @@ public class Produto {
 	private int paginas;
 	@ElementCollection
 	private List<Preco> precos;
-	
+	private String sumarioPath;
 	@DateTimeFormat
 	private Calendar dataLancamento;
 	
-		
+	
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
+	}		
 	public Calendar getDataLancamento() {
 		return dataLancamento;
 	}
