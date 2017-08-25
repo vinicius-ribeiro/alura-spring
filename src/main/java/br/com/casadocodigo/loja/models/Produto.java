@@ -16,13 +16,19 @@ public class Produto {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	private String titulo;
+	
 	private String descricao;
+	
 	private int paginas;
+	
 	@ElementCollection
 	private List<Preco> precos;
+	
 	private String sumarioPath;
-	@DateTimeFormat
+	
+	@DateTimeFormat	
 	private Calendar dataLancamento;
 	
 	
