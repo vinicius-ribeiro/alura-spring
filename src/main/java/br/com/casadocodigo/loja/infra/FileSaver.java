@@ -30,5 +30,20 @@ public class FileSaver {
 		}
 	}
 	
+	 public String gravar(String basePath, MultipartFile arquivo) {
+	        try {
+	            String realPath = request.getServletContext().getRealPath("/" + basePath);
+	            File file = new File(realPath, arquivo.getOriginalFilename());
+	            file.getParentFile().mkdirs();
+	            System.out.println(file.getParent());
+	            if (!file.exists()) {
+	                arquivo.transferTo(file);
+	            }
+	            return basePath + "/" + arquivo.getOriginalFilename();
+	        } catch (Exception e) {
+	            throw new RuntimeException(e);
+	        }
+	    }
+	
 	
 }

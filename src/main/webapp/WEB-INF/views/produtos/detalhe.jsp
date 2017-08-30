@@ -7,18 +7,19 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<base href="../resources/css/" />
 	<link rel="icon" href="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/favicon.ico?11981592617154272979" type="image/ico" />
 	<link href="${contextPath}../resources/css/cssbase-min.css" rel="stylesheet" type="text/css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' />
-	<link href="${contextPath}../resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${contextPath}../resources/css/produtos.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/fontello-ie7.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/fontello-embedded.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/fontello.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/layout-colors.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/responsive-style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/guia-do-programador-style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${contextPath}../../../resources/css/produtos.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="canonical" href="http://www.casadocodigo.com.br/" />
 	<title>${produto.titulo}</title>
 </head>
@@ -71,10 +72,10 @@
 	
 	  
 	  <section class="buy-options clearfix">  
-	  <form action="/carrinho/add" method="post" class="container">
+	  <form action='<c:url value="/carrinho/add" />' method="post" class="container">
 	    <ul id="variants" class="clearfix">
 	    	<input type="hidden" value="${produto.id }" name="produtoId" />
-	    	 <c:forEach items="" var="preco">
+	    	 <c:forEach items="${produto.precos }" var="preco">
 	    	 <li class="buy-option">
 	            <input type="radio" name="id" class="variant-radio" id="" value="9720393823"  checked="checked"  />
 	            <label  class="variant-label">	                  
